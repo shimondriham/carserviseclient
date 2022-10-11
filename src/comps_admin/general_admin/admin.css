@@ -1,0 +1,21 @@
+.tableDesign{
+  color: white;
+}
+
+.btnTable{
+  background: no-repeat;
+  outline: none;
+  border: 1px solid white;
+  color: white;
+  padding: 7px 15px;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: 'Bonheur Royale', cursive;
+  text-decoration: none;
+}
+.btnTable:hover{
+  background: white;
+  color: rgb(0, 0, 0);
+}
+

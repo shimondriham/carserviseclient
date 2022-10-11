@@ -1,0 +1,32 @@
+.strip_home{
+  min-height: 400px;
+  background:silver;
+  background-size: cover;
+  background-position:center center;
+}
+
+.categories_list a{
+  text-decoration: none;
+}
+
+.categories_list a > div{
+  transition: 400ms;
+}
+
+.categories_list a:hover > div{
+  box-sizing: border-box;
+  transform: scale(1.04,1.04);
+}
+
+.categories_list .myCard .img_card{
+  min-height: 150px;
+  background:silver;
+  background-size: cover;
+  background-position:center center;
+}
+.gradi{
+	background: linear-gradient(to right, #000000 0%, #e91e63 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: sans-serif;
+}
