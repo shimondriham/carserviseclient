@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { deleteToken } from '../../services/localService';
 
-function LogoutClient(props){
+function LogoutClient(props) {
   let nav = useNavigate();
 
   useEffect(() => {
     deleteToken();
     toast.info("You logged out from system , see you soon!")
     nav("/");
-  },[])// eslint-disable-line react-hooks/exhaustive-deps
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
-  return(
-    <div></div> 
+  return (
+    <div></div>
   )
-}
+};
 
-export default LogoutClient
+export default LogoutClient;

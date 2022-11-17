@@ -34,4 +34,4 @@ function AuthClientComp(props) {
   )
 }
 
-export default AuthClientComp
+export default AuthClientComp;

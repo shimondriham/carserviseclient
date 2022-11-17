@@ -36,4 +36,4 @@ function AuthAdminComp(props) {
   )
 }
 
-export default AuthAdminComp
+export default AuthAdminComp;

@@ -31,7 +31,8 @@ function RentalListPage(props) {
     let urlAmounts = API_URL + "/rental/amount?cat=" + short_id;
     let resp3 = await doApiGet(urlAmounts);
     setAmount(resp3.data.amount)
-  }
+  };
+
   return (
     <div className='container-fluid mb-5' style={{ minHeight: "85vh" }}>
       <div style={{ minHeight: "15vh" }}></div>
@@ -58,6 +59,6 @@ function RentalListPage(props) {
       <div style={{ minHeight: "3vh" }}></div>
     </div>
   )
-}
+};
 
-export default RentalListPage
+export default RentalListPage;

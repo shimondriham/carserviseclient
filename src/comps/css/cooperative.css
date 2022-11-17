@@ -1,38 +1,38 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-      monospace;
-  }
-  
-  .marker-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .marker-btn img {
-    width: 40px;
-    height: 40px;
-  }
-  
-.pop
-{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.marker-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.marker-btn img {
+  width: 40px;
+  height: 40px;
+}
+
+.pop {
   font-family: 'Bonheur Royale', cursive;
   padding: 20px;
   text-shadow: #ffffff 1px 0 10px;
   color: black;
   background: linear-gradient(#fde7ea, #fdefda);
 }
-.add-cooper{
+
+.add-cooper {
   background: rgba(0, 0, 0, 0.3);
   width: max-content;
   display: block;
-  padding:0.4rem 0.55rem 0 0.55rem;
+  padding: 0.4rem 0.55rem 0 0.55rem;
   z-index: 2;
   position: fixed;
   left: 5%;
@@ -44,21 +44,23 @@ body {
   backdrop-filter: blur(15px);
   margin-bottom: 5vh;
 }
-.add-cooper button{
+
+.add-cooper button {
   background: transparent;
   padding: 0.9rem;
   border-radius: 50%;
   display: flex;
 }
-.add-cooper button:hover{
+
+.add-cooper button:hover {
   background: rgb(255, 255, 255);
 }
 
-.my-cooper{
+.my-cooper {
   background: rgba(0, 0, 0, 0.3);
   width: max-content;
   display: block;
-  padding:0.4rem 0.55rem 0 0.55rem;
+  padding: 0.4rem 0.55rem 0 0.55rem;
   z-index: 2;
   position: fixed;
   left: 95%;
@@ -70,23 +72,24 @@ body {
   backdrop-filter: blur(15px);
   margin-bottom: 5vh;
 }
-.my-cooper button{
+
+.my-cooper button {
   background: transparent;
   padding: 0.9rem;
   border-radius: 50%;
   display: flex;
 }
-.my-cooper button:hover{
+
+.my-cooper button:hover {
   background: rgb(255, 255, 255);
 }
-@media (max-width:991px)
-{
-  .add-cooper{
+
+@media (max-width:991px) {
+  .add-cooper {
     left: 10%;
   }
-  .my-cooper{
+
+  .my-cooper {
     left: 90%;
   }
 }
-
-

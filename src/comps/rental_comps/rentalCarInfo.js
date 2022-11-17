@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState, useRef } from 'react';
-import {  useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { API_URL, doApiGet } from '../../services/apiService';
 import { addProdVisitedToLocal } from '../../services/localService';
 import { AppContext } from "../../context/shopContext"
@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import RentalItem from './rentalItem';
 
 function RentalCarInfo(props) {
-  const { setStartDate, setEndDate, sumDays ,setSumDays } = useContext(AppContext);
+  const { setStartDate, setEndDate, sumDays, setSumDays } = useContext(AppContext);
   const [product, setProduct] = useState({});
   const [flag, setFlag] = useState(true);
   const [flagOffer, setFlagOffer] = useState(false);
@@ -41,28 +41,28 @@ function RentalCarInfo(props) {
   }
   function isDateBeforeToday(date) {
     return new Date(date) < new Date(new Date().toDateString());
-}
+  }
 
   function isDateCorrectDay() {
     let start = new Date(startDateRef.current.value)
     let end = new Date(endDateRef.current.value)
-    let Difference_In_Days = (end.getTime() - start.getTime())/ (1000 * 3600 * 24);
+    let Difference_In_Days = (end.getTime() - start.getTime()) / (1000 * 3600 * 24);
     setSumDays(Difference_In_Days)
-    return  Difference_In_Days <= 0 ;
-}
+    return Difference_In_Days <= 0;
+  }
 
   const totalPrice = async () => {
-    let _start =startDateRef.current.value
-    let _end =endDateRef.current.value
+    let _start = startDateRef.current.value
+    let _end = endDateRef.current.value
     if (_start && _end) {
       let start = new Date(_start)
       let end = new Date(_end)
       isDateCorrectDay()
       setStartDate(_start)
       setEndDate(_end)
-      if (isDateCorrectDay() || isDateBeforeToday(_start)){ 
+      if (isDateCorrectDay() || isDateBeforeToday(_start)) {
         toast.error("Please choose correct Days")
-      } 
+      }
       else {
         let car_ar = product.in_use;
         for (let i = 0; i < car_ar.length; i++) {
@@ -71,13 +71,13 @@ function RentalCarInfo(props) {
           if ((start >= tempStart && start <= tempend) || (end >= tempStart && end <= tempend) || (start < tempStart && end > tempend)) {
             toast.error("in use")
             setFlag(false)
-            doApiw();
+            doApiW();
             setFlagOffer(true)
           }
           else {
             setFlag(true)
-            doApiw();
-            setFlagOffer(true) 
+            doApiW();
+            setFlagOffer(true)
           }
         }
       }
@@ -85,32 +85,32 @@ function RentalCarInfo(props) {
     else toast.error("Please choose Days")
   }
 
-  const doApiw = async () => {
+  const doApiW = async () => {
     let url = API_URL + "/rental/allCars";
     let resp = await doApiGet(url);
     let all_cars = resp.data;
-    let start = new Date(startDateRef.current.value)
-    let end = new Date(endDateRef.current.value)
+    let start = new Date(startDateRef.current.value);
+    let end = new Date(endDateRef.current.value);
     let temp_ar = [];
     for (let i = 0; i < all_cars.length; i++) {
-    let  flag_if_use = true ;
+      let flag_if_use = true;
       let in_use_ar = all_cars[i].in_use;
       if (in_use_ar) {
         for (let j = 0; j < in_use_ar.length; j++) {
-          let tempStart = new Date(in_use_ar[j].start)
-          let tempend = new Date(in_use_ar[j].end)
+          let tempStart = new Date(in_use_ar[j].start);
+          let tempend = new Date(in_use_ar[j].end);
           if ((start >= tempStart && start <= tempend) || (end >= tempStart && end <= tempend) || (start < tempStart && end > tempend)) {
             flag_if_use = false;
           }
         }
       }
       if (flag_if_use) {
-       let temp_car =  all_cars[i] ;
-       if(temp_ar.length){
-         temp_ar = [...temp_ar, {...temp_car} ]
-       }else{
-        temp_ar = [{...temp_car}]
-       }
+        let temp_car = all_cars[i];
+        if (temp_ar.length) {
+          temp_ar = [...temp_ar, { ...temp_car }]
+        } else {
+          temp_ar = [{ ...temp_car }]
+        }
       }
     }
     setAr(temp_ar);
@@ -173,4 +173,4 @@ function RentalCarInfo(props) {
   )
 }
 
-export default RentalCarInfo
+export default RentalCarInfo;

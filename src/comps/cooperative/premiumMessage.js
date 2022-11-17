@@ -31,12 +31,12 @@ function PremiumMessage(props) {
                 <FaMap />
               </span>
             </h1>
-              <div className="link-premium">
-            <Link to={"/checkoutPremium"} className="text-decoration-none">
-            <h2 className="text-center">GET</h2>
-            <h2 className="text-center">PREMIUM</h2>
-            <h2 className="text-center">NOW!</h2>
-            </Link>
+            <div className="link-premium">
+              <Link to={"/checkoutPremium"} className="text-decoration-none">
+                <h2 className="text-center">GET</h2>
+                <h2 className="text-center">PREMIUM</h2>
+                <h2 className="text-center">NOW!</h2>
+              </Link>
             </div>
             <button onClick={closeMsg} className="text-white btn-close">
               Ask me later

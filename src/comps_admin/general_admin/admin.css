@@ -1,8 +1,8 @@
-.tableDesign{
+.tableDesign {
   color: white;
 }
 
-.btnTable{
+.btnTable {
   background: no-repeat;
   outline: none;
   border: 1px solid white;
@@ -14,8 +14,8 @@
   font-family: 'Bonheur Royale', cursive;
   text-decoration: none;
 }
-.btnTable:hover{
+
+.btnTable:hover {
   background: white;
   color: rgb(0, 0, 0);
 }
-

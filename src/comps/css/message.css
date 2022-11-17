@@ -1,72 +1,78 @@
-.message{
-    width: 50%;
-    background: rgba(0, 0, 0, 0.3);
-    color: aliceblue;
-    position: fixed;
-    top: 25vh;
-    left: 50%;
-    transform: translatex(-50%);
-    display: block;
-    z-index: 99;
-    backdrop-filter: blur(15px);
-    text-align: center;
-    padding: 10px;
-    border-radius: 7vh;
+.message {
+  width: 50%;
+  background: rgba(0, 0, 0, 0.3);
+  color: aliceblue;
+  position: fixed;
+  top: 25vh;
+  left: 50%;
+  transform: translatex(-50%);
+  display: block;
+  z-index: 99;
+  backdrop-filter: blur(15px);
+  text-align: center;
+  padding: 10px;
+  border-radius: 7vh;
 }
-.message h1{
-    margin-top: 3vh;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: "center";
-}
-.message h4{
-    margin: 18vh;
-    margin-top: 10%;
-    font-style: italic;
-}
-.message .btn{
-  margin-top: 5vh;
-    background: no-repeat;
-    outline: none;
-    border: 1px solid white;
-    width: 30%;
-    font-size: large;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-family: 'Bonheur Royale', cursive;
-    border-radius: 3vh;
-  }
-  .message .btn:hover{
-    background: rgba(255, 255, 255, 0.568);
-    color: rgb(0, 0, 0);  
-  }
 
-  .link-premium{
-    border: 1px solid rgb(255, 255, 255);
-    border-radius: 100px 20px 100px 20px;
-    margin: 20px;
-    padding: 20px;
-    transition: 0.9s ease;
+.message h1 {
+  margin-top: 3vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: "center";
+}
+
+.message h4 {
+  margin: 18vh;
+  margin-top: 10%;
+  font-style: italic;
+}
+
+.message .btn {
+  margin-top: 5vh;
+  background: no-repeat;
+  outline: none;
+  border: 1px solid white;
+  width: 30%;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: 'Bonheur Royale', cursive;
+  border-radius: 3vh;
+}
+
+.message .btn:hover {
+  background: rgba(255, 255, 255, 0.568);
+  color: rgb(0, 0, 0);
+}
+
+.link-premium {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 100px 20px 100px 20px;
+  margin: 20px;
+  padding: 20px;
+  transition: 0.9s ease;
+}
+
+.link-premium:hover {
+  background: rgb(244, 0, 0);
+  background: radial-gradient(circle, rgba(244, 0, 0, 1) 0%, rgba(247, 255, 243, 0) 100%);
+}
+
+.btn-close {
+  margin-top: 5vh;
+  background: no-repeat;
+  outline: none;
+  width: 50%;
+  font-size: large;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-family: 'Bonheur Royale', cursive;
+  border-radius: 3vh;
+}
+
+@media (max-width:991px) {
+  .message {
+    width: 90%;
   }
-  .link-premium:hover{
-    background: rgb(244,0,0);
-    background: radial-gradient(circle, rgba(244,0,0,1) 0%, rgba(247,255,243,0) 100%);
-  }
-  .btn-close{
-    margin-top: 5vh;
-    background: no-repeat;
-    outline: none;
-    width: 50%;
-    font-size: large;
-    cursor: pointer;
-    transition: 0.3s ease;
-    font-family: 'Bonheur Royale', cursive;
-    border-radius: 3vh;
-  }
-  @media (max-width:991px)
-  {
-    .message{
-      width: 90%;
-    }
-  }
+}

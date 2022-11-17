@@ -20,8 +20,6 @@ function CheckoutPremium(props) {
       let resp = await doApiGet(url);
       setUserId(resp.data._id);
       setUserRole(resp.data.role);
-      // console.log(resp.data.role);
-      
     } catch (err) {
       console.log(err.response.data);
     }
@@ -53,9 +51,9 @@ function CheckoutPremium(props) {
     >
       <div style={{ minHeight: "14vh" }}></div>
       <AuthClientComp />
-      {userRole === "admin" || userRole === "premium"?
-      toast.error("you alreay premium user") && nav(-1)
-       : null}
+      {userRole === "admin" || userRole === "premium" ?
+        toast.error("you alreay premium user") && nav(-1)
+        : null}
       <div>
         <img
           src={"/images/premium.png"}

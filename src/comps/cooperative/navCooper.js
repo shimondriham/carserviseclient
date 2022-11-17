@@ -38,7 +38,7 @@ function NavCooper(props) {
       </button>
     </nav>
   );
-}
+};
 
 export default NavCooper;
 
