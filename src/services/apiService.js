@@ -13,25 +13,25 @@ export const doApiGet = async (_url) => {
     });
     return data;
   }
-  catch(err){
+  catch (err) {
     throw err
   }
-}
+};
 
-export const doApiMethod = async (_url,_method,_body) => {
+export const doApiMethod = async (_url, _method, _body) => {
   try {
     let data = await axios({
-      method:_method,
-      url:_url,
+      method: _method,
+      url: _url,
       data: JSON.stringify(_body),
-      headers:{
+      headers: {
         'x-api-key': localStorage["tok"],
         'content-type': "application/json"
       }
     });
     return data;
   }
-  catch(err){
+  catch (err) {
     throw err
   }
-}
+};

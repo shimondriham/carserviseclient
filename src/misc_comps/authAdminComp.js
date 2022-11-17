@@ -3,35 +3,35 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { API_URL, doApiGet } from '../services/apiService';
 
-function AuthAdminComp(props){
+function AuthAdminComp(props) {
   let nav = useNavigate();
 
   useEffect(() => {
-    if(localStorage["tok"]){
+    if (localStorage["tok"]) {
       doApi()
     }
-    else{
-      toast.error("You must be admin to be here! or you need to login again")
-      nav("/admin")
+    else {
+      toast.error("You must be admin to be here! or you need to login again");
+      nav("/admin");
     }
-  },[])// eslint-disable-line react-hooks/exhaustive-deps
+  }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
-  const doApi = async() => {
+  const doApi = async () => {
     let url = API_URL + "/users/myInfo";
-    try{
-      let resp = await doApiGet(url)
-      if(resp.data.role !== "admin"){
-        toast.error("You must be admin to be here! or you need to login again")
-        nav("/admin/logout")
+    try {
+      let resp = await doApiGet(url);
+      if (resp.data.role !== "admin") {
+        toast.error("You must be admin to be here! or you need to login again");
+        nav("/admin/logout");
       }
     }
-    catch(err){
+    catch (err) {
       console.log(err.response);
-      alert("You must be admin to be here! or you need to login again")
-      nav("/admin/logout")
+      alert("You must be admin to be here! or you need to login again");
+      nav("/admin/logout");
     }
   }
-  return(
+  return (
     <React.Fragment></React.Fragment>
   )
 }

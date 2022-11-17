@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes , Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import LayoutClient from './comps/general_comps/layoutClient';
 import LayoutAdmin from './comps_admin/general_admin/layoutAdmin';
@@ -47,70 +47,70 @@ import MyCooperList from './comps/cooperative/myCooperList';
 import EditCooperCar from './comps/cooperative/editCooperCar';
 import CheckoutPremium from './comps/orders_comps/checkoutPremium';
 
-function AppRoute(props){
-  return(
-    <Router>
+function AppRoute(props) {
+  return (
+    <BrowserRouter>
       <Routes>
         {/* for admin user */}
         <Route path="/admin" element={<LayoutAdmin />}>
-          <Route index element={<LoginAdmin />}/>
-          <Route path="/admin/users" element={<UsersList />}/>
-          <Route path="/admin/cooperative" element={<CooperativeList />}/>
-          <Route path="/admin/logout" element={<LogoutAdmin />}/>
+          <Route index element={<LoginAdmin />} />
+          <Route path="/admin/users" element={<UsersList />} />
+          <Route path="/admin/cooperative" element={<CooperativeList />} />
+          <Route path="/admin/logout" element={<LogoutAdmin />} />
           {/* rental script admin*/}
-          <Route path="/admin/rentalCars" element={<RentalAdminCatList/>}/>
-          <Route path="/admin/rentalCars/edit/:url_name" element={<EditCategoryRental/>}/>
-          <Route path="/admin/addRentalcategory" element={<AddRentalCategory />}/>
-          <Route path="/admin/rentalCars/:cat_url" element={<RentalAdminList/>}/>
-          <Route path="/admin/addRentalProduct" element={<AddRentalProduct />}/>
-          <Route path="/admin/editProductRental/:id" element={<EditProductRental />}/>
+          <Route path="/admin/rentalCars" element={<RentalAdminCatList />} />
+          <Route path="/admin/rentalCars/edit/:url_name" element={<EditCategoryRental />} />
+          <Route path="/admin/addRentalcategory" element={<AddRentalCategory />} />
+          <Route path="/admin/rentalCars/:cat_url" element={<RentalAdminList />} />
+          <Route path="/admin/addRentalProduct" element={<AddRentalProduct />} />
+          <Route path="/admin/editProductRental/:id" element={<EditProductRental />} />
           {/* sale script admin*/}
-          <Route path="/admin/saleCars" element={<SaleAdminCatList/>}/>
-          <Route path="/admin/saleCars/edit/:url_name" element={<EditCategorySale/>}/>
-          <Route path="/admin/addcategory" element={<AddCategory />}/>
-          <Route path="/admin/saleCars/:cat_url" element={<SaleAdminList/>}/>
-          <Route path="/admin/addSaleProduct" element={<AddSaleProduct/>}/>
-          <Route path="/admin/editProductSale/:id" element={<EditProductSale/>}/>
+          <Route path="/admin/saleCars" element={<SaleAdminCatList />} />
+          <Route path="/admin/saleCars/edit/:url_name" element={<EditCategorySale />} />
+          <Route path="/admin/addcategory" element={<AddCategory />} />
+          <Route path="/admin/saleCars/:cat_url" element={<SaleAdminList />} />
+          <Route path="/admin/addSaleProduct" element={<AddSaleProduct />} />
+          <Route path="/admin/editProductSale/:id" element={<EditProductSale />} />
           {/* checkout admin*/}
-          <Route path="/admin/checkout" element={<CheckoutMain />}/>
-          <Route path="/admin/checkout/rental" element={<CheckoutAdminRental />}/>
-          <Route path="/admin/checkout/sale" element={<CheckoutAdminSale />}/>
+          <Route path="/admin/checkout" element={<CheckoutMain />} />
+          <Route path="/admin/checkout/rental" element={<CheckoutAdminRental />} />
+          <Route path="/admin/checkout/sale" element={<CheckoutAdminSale />} />
         </Route>
-          {/* for regular user */}
+        {/* for regular user */}
         <Route path="/" element={<LayoutClient />}>
           <Route index element={<Home />} />
-          <Route path="/contact" element={<Contact />}/>
-          <Route path="/login" element={<LogInClient />}  />
-          <Route path="/signup" element={<SignUpClient />}  />
-          <Route path="/logout" element={<LogoutClient />}  />
-          <Route path="/userInfo" element={<UserInfo/>}  />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<LogInClient />} />
+          <Route path="/signup" element={<SignUpClient />} />
+          <Route path="/logout" element={<LogoutClient />} />
+          <Route path="/userInfo" element={<UserInfo />} />
           {/* rental script */}
-          <Route path="recentRental" element={<RecentRental />}/>
-          <Route path="/rentalCat" element={<RentalCat />}  />
-          <Route path="/rental/:cat_url" element={<RentalListPage/>}  />
-          <Route path="/rentalSearch/" element={<SearchRentalCars />}  />
-          <Route path="/rentalCarInfo/:id" element={<RentalCarInfo/>}  />
+          <Route path="recentRental" element={<RecentRental />} />
+          <Route path="/rentalCat" element={<RentalCat />} />
+          <Route path="/rental/:cat_url" element={<RentalListPage />} />
+          <Route path="/rentalSearch/" element={<SearchRentalCars />} />
+          <Route path="/rentalCarInfo/:id" element={<RentalCarInfo />} />
           {/* sale script */}
-          <Route path="/sale" element={<SaleList/> }  />
-          <Route path="/saleSearch/" element={<SearchSaleCars />}  />
-          <Route path="/saleCarInfo/:id" element={<SaleCarInfo/>}  />
+          <Route path="/sale" element={<SaleList />} />
+          <Route path="/saleSearch/" element={<SearchSaleCars />} />
+          <Route path="/saleCarInfo/:id" element={<SaleCarInfo />} />
           {/* cooperatice script */}
-          <Route path="/cooperative" element={<Cooperative />}  />          
-          <Route path="/cooperative/addCar" element={<AddCooperCar/>}  />          
-          <Route path="/cooperative/:id" element={<CooperativeItem />}  />          
-          <Route path="/cooperative/myCooper" element={<MyCooperList />}  />          
-          <Route path="/cooperative/editCar/:id" element={<EditCooperCar />}  />          
+          <Route path="/cooperative" element={<Cooperative />} />
+          <Route path="/cooperative/addCar" element={<AddCooperCar />} />
+          <Route path="/cooperative/:id" element={<CooperativeItem />} />
+          <Route path="/cooperative/myCooper" element={<MyCooperList />} />
+          <Route path="/cooperative/editCar/:id" element={<EditCooperCar />} />
           {/* chechout */}
-          <Route path="/checkoutSale/:id" element={<CheckoutSale />}  />
-          <Route path="/checkoutRental/:id" element={<CheckoutRental />}  />
-          <Route path="/checkoutPremium" element={<CheckoutPremium />}  />
+          <Route path="/checkoutSale/:id" element={<CheckoutSale />} />
+          <Route path="/checkoutRental/:id" element={<CheckoutRental />} />
+          <Route path="/checkoutPremium" element={<CheckoutPremium />} />
           {/* error 404 */}
-          <Route path="/*" element={<Page404/>} />
-        </Route> 
+          <Route path="/*" element={<Page404 />} />
+        </Route>
       </Routes>
       <ToastContainer position="top-right" theme='colored' />
-    </Router> 
+    </BrowserRouter>
   )
-}
+};
 
 export default AppRoute
