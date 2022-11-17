@@ -47,7 +47,7 @@ function UsersList(props) {
   };
 
   const delUser = async (_idDel) => {
-    if(_idDel === "6268023f45f842ebf1ab3dea"){
+    if (_idDel === "6268023f45f842ebf1ab3dea") {
       toast.dark("you can't delete the super admin")
       return
     }
@@ -101,55 +101,25 @@ function UsersList(props) {
             return (
               <tr key={item._id}>
                 <td>{i + 1}</td>
-                <td>
-                   {item.first_name + " " + item.last_name}
-                </td>
+                <td>{item.first_name + " " + item.last_name}</td>
                 <td>{item.email}</td>
-
                 <td>{item.address}</td>
                 <td>
-                  {item._id !== "6268023f45f842ebf1ab3dea" ? (
-                    <select
-                      key={i}
-                      ref={(el) => (itemsRef.current[i] = el)}
-                      onChange={() => {
-                        changeRole(item._id, itemsRef.current[i].value);
-                      }}
-                      className="form-select form-select-lg mb-3 "
-                      aria-label=".form-select-lg example"
-                    >
-                      <option value={item.role} defaultValue>
-                        {item.role}
-                      </option>
-                      {item.role !== "admin" ? (
-                        <option value="admin">admin</option>
-                      ) : (
-                        ""
-                      )}
-                      {item.role !== "premium" ? (
-                        <option value="premium">premium</option>
-                      ) : (
-                        ""
-                      )}
-                      {item.role !== "user" ? (
-                        <option value="user">user</option>
-                      ) : (
-                        ""
-                      )}
-                    </select>
-                  ) : (
-                    <h4 className="text-dark">Super Admin</h4>
-                  )}
+                  {item._id !== "6268023f45f842ebf1ab3dea" ?
+                    (<select key={i} ref={(el) => (itemsRef.current[i] = el)} onChange={() => { changeRole(item._id, itemsRef.current[i].value); }} className="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                      <option value={item.role} defaultValue>{item.role}</option>
+                      {item.role !== "admin" ? (<option value="admin">admin</option>) : ("")}
+                      {item.role !== "premium" ? (<option value="premium">premium</option>) : ("")}
+                      {item.role !== "user" ? (<option value="user">user</option>) : ("")}
+                    </select>)
+                    : (<h4 className="text-dark">Super Admin</h4>)}
                 </td>
                 <td>
                   <button
                     onClick={() => {
                       delUser(item._id);
                     }}
-                    className="badge btn btn-outline-danger mx-5"
-                  >
-                    X
-                  </button>
+                    className="badge btn btn-outline-danger mx-5">X</button>
                 </td>
               </tr>
             );

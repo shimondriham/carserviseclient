@@ -24,7 +24,7 @@ function RentalItem(props) {
     }
     }
  
-  }
+  };
 
   return (
     <div className='product-item col-md-4 p-2'>
@@ -46,6 +46,6 @@ function RentalItem(props) {
     </div>
  
   )
-}
+};
 
-export default RentalItem
+export default RentalItem;

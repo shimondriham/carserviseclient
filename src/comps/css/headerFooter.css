@@ -1,72 +1,81 @@
-.header-client{
+.header-client {
   min-height: 60px;
-  background:rgba(36, 33, 33, 0.781);
+  background: rgba(36, 33, 33, 0.781);
   position: relative;
   z-index: 999;
 }
-header.sticky{
+
+header.sticky {
   background: linear-gradient(90deg, #013f52a2 0%, rgba(68, 66, 66, 0.61) 100%);
 }
 
 
-.header-client .container , .header-client .row{
+.header-client .container,
+.header-client .row {
   min-height: inherit;
   margin-top: 10px;
 }
 
-.header-client .logo a{
-  color:grey;
+.header-client .logo a {
+  color: grey;
   text-decoration: none;
 }
 
-.header-client nav a{
-  color:rgb(255, 255, 255);
-  padding:0 12px;
+.header-client nav a {
+  color: rgb(255, 255, 255);
+  padding: 0 12px;
   text-decoration: none;
 }
 
 
-.header-client nav  a:hover{
-  color:rgb(128, 128, 128);
+.header-client nav a:hover {
+  color: rgb(128, 128, 128);
 }
 
 
-.footer-client{
+.footer-client {
   display: flex;
   align-items: center;
   min-height: 48px;
 }
 
-.links_header{
+.links_header {
   display: flex;
 }
-@media (max-width: 767px){
-  .links_header{
+
+@media (max-width: 767px) {
+  .links_header {
     display: block;
     font-size: 22px;
     text-align: center;
   }
-  .links_header i{
+
+  .links_header i {
     font-size: 0px;
   }
-  .log_in_out{
+
+  .log_in_out {
     margin-top: 24px;
   }
-  .log_in_out a{
+
+  .log_in_out a {
     display: block;
     text-align: center;
     margin-left: 18px;
     margin-top: 6px;
   }
 }
-@media (max-width: 992px){
-.header-client .container{
-  max-width: 100% !important;
-}
-.log_in_out a {
-  display: block;
-}
-.log_in_out .slesh{
-  display: none;
-}
+
+@media (max-width: 992px) {
+  .header-client .container {
+    max-width: 100% !important;
+  }
+
+  .log_in_out a {
+    display: block;
+  }
+
+  .log_in_out .slesh {
+    display: none;
+  }
 }

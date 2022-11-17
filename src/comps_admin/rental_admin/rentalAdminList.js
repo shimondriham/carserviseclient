@@ -36,13 +36,13 @@ function RentalAdminList(props) {
     let urlAmounts = API_URL + "/rental/amount?cat=" + short_id;
     let resp3 = await doApiGet(urlAmounts);
     setAmount(resp3.data.amount)
+  };
 
-  }
   const checkIfUsed = (car) => {
-    let dateToday = new Date(); 
-    return  car?.in_use?.findIndex((rent) => { return (new Date(rent.start) <= dateToday && new Date(rent.end) >= dateToday) }) !== -1
- 
-  }
+    let dateToday = new Date();
+    return car?.in_use?.findIndex((rent) => { return (new Date(rent.start) <= dateToday && new Date(rent.end) >= dateToday) }) !== -1
+  };
+
   const delCar = async (_idDel) => {
     if (window.confirm("Are you sure you want to delete?")) {
       try {
@@ -58,8 +58,7 @@ function RentalAdminList(props) {
         doApi();
       }
     }
-  }
-
+  };
 
 
   return (
@@ -114,6 +113,6 @@ function RentalAdminList(props) {
       <div style={{ minHeight: "3vh" }}></div>
     </div>
   )
-}
+};
 
-export default RentalAdminList
+export default RentalAdminList;

@@ -106,7 +106,6 @@ function CheckoutSale(props) {
               }}
             />
           </div>
-          {/* } */}
         </div>
       </div>
     </div>

@@ -1,65 +1,72 @@
-.premium-go{
-    background: rgba(0, 0, 0, 0.3);
-    width: max-content;
-    display: block;
-    padding:0.4rem 0.55rem 0 0.55rem;
-    z-index: 2;
-    position: fixed;
-    left: 15%;
-    transform: translatex(-50%);
-    bottom: 2rem;
-    display: flex;
-    gap: 0.8rem;
-    border-radius: 3rem;
-    backdrop-filter: blur(15px);
-    margin-bottom: 5vh;
-  }
-  .premium-go button{
-    background: transparent;
-    padding: 0.9rem;
-    border-radius: 50%;
-    display: flex;
-  }
-  .premium-go button:hover{
-    background: rgb(255, 255, 255);
-  }
-  .delete-user{
-    background: rgba(0, 0, 0, 0.3);
-    width: max-content;
-    display: block;
-    padding:0.4rem 0.55rem 0 0.55rem;
-    z-index: 2;
-    position: fixed;
-    left: 85%;
-    transform: translatex(-50%);
-    bottom: 2rem;
-    display: flex;
-    gap: 0.8rem;
-    border-radius: 3rem;
-    backdrop-filter: blur(15px);
-    margin-bottom: 5vh;
-  }
-  .delete-user button{
-    background: transparent;
-    padding: 0.9rem;
-    border-radius: 50%;
-    display: flex;
-  }
-  .delete-user button:hover{
-    background: rgb(255, 255, 255);
-  }
-  .details{
-    display: flex;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-  }
-  @media (max-width:1200px)
-{
-.premium-go{
-display: none;
+.premium-go {
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  display: block;
+  padding: 0.4rem 0.55rem 0 0.55rem;
+  z-index: 2;
+  position: fixed;
+  left: 15%;
+  transform: translatex(-50%);
+  bottom: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  margin-bottom: 5vh;
 }
-.delete-user{
-  left: 50%;
+
+.premium-go button {
+  background: transparent;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
 }
+
+.premium-go button:hover {
+  background: rgb(255, 255, 255);
+}
+
+.delete-user {
+  background: rgba(0, 0, 0, 0.3);
+  width: max-content;
+  display: block;
+  padding: 0.4rem 0.55rem 0 0.55rem;
+  z-index: 2;
+  position: fixed;
+  left: 85%;
+  transform: translatex(-50%);
+  bottom: 2rem;
+  display: flex;
+  gap: 0.8rem;
+  border-radius: 3rem;
+  backdrop-filter: blur(15px);
+  margin-bottom: 5vh;
+}
+
+.delete-user button {
+  background: transparent;
+  padding: 0.9rem;
+  border-radius: 50%;
+  display: flex;
+}
+
+.delete-user button:hover {
+  background: rgb(255, 255, 255);
+}
+
+.details {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width:1200px) {
+  .premium-go {
+    display: none;
+  }
+
+  .delete-user {
+    left: 50%;
+  }
 }

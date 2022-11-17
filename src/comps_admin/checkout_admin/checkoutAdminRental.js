@@ -61,6 +61,6 @@ function CheckoutAdminRental(props) {
       }} className='btn btn-outline-light mt-4'><i className="fa fa-chevron-left" aria-hidden="true"></i></button>
     </div>
   )
-}
+};
 
-export default CheckoutAdminRental
+export default CheckoutAdminRental;

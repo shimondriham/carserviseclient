@@ -28,7 +28,7 @@ function SaleList(props) {
     doApiCat();
     doApi();
   }, [location, flagGear, flagPrice]); // eslint-disable-line react-hooks/exhaustive-deps
-  
+
   const doApiCat = async () => {
     let url = API_URL + "/categoriesSale";
     let resp = await doApiGet(url);
@@ -90,79 +90,50 @@ function SaleList(props) {
         <div className="sale-list">
           <div>
             <h5>Category:<i className="fa fa-arrow-down mx-2" aria-hidden="true"></i></h5>
-            <select
-              ref={catRef}
-              onChange={doApi}
-              className="form-select color-black me-4"
-              style={{ width: "160px", background:"#e9ff" }}
-            >
+            <select ref={catRef} onChange={doApi} className="form-select color-black me-4" style={{ width: "160px", background: "#e9ff" }}>
               <option value="">Choose Category</option>
               {catAr.map((item) => {
                 return (
-                  <option key={item._id} value={item.short_id}>
-                    {item.name}
-                  </option>
+                  <option key={item._id} value={item.short_id}> {item.name} </option>
                 );
               })}
             </select>
           </div>
+
           <div>
             <h5>Year:<i className="fa fa-arrow-down mx-2" aria-hidden="true"></i></h5>
-            <select
-              ref={yearRef}
-              onChange={doApi}
-              className="form-select color-black"
-              style={{ width: "160px", background:"#e9ff" }}
-            >
+            <select ref={yearRef} onChange={doApi} className="form-select color-black" style={{ width: "160px", background: "#e9ff" }}>
               <option value="">Choose Year</option>
               {yearsar.map((item, i) => {
                 return (
-                  <option key={i} value={item}>
-                    {item}
-                  </option>
+                  <option key={i} value={item}> {item} </option>
                 );
               })}
             </select>
           </div>
 
           <div className=" d-flex inp form__group field">
-            <input
-              onKeyDown={onKeyboardClick}
-              className="form__field my-2"
-              ref={inputRef}
-              placeholder="Type car name..."
-              type="search"
-            />
-            <button onClick={onSearchClick} className="btn text-white">
-              <i className="fa fa-search" aria-hidden="true"></i>
-            </button>
+            <input onKeyDown={onKeyboardClick} className="form__field my-2" ref={inputRef} placeholder="Type car name..." type="search" />
+            <button onClick={onSearchClick} className="btn text-white"> <i className="fa fa-search" aria-hidden="true"></i></button>
           </div>
+
           <div>
             <div className="d-block mb-3">
               <div className="d-flex mb-2">
-                <input
-                  type="checkbox"
-                  className="checkbox mx-1 mt-1"
-                  onChange={sortByPrice}
-                  id="select"
-                />
+                <input type="checkbox" className="checkbox mx-1 mt-1" onChange={sortByPrice} id="select" />
                 <span>low price</span>
               </div>
               <div className="d-flex">
-                <input
-                  type="checkbox"
-                  className="checkbox mx-1 mt-1"
-                  onChange={filterGear}
-                />
+                <input type="checkbox" className="checkbox mx-1 mt-1" onChange={filterGear} />
                 <span>gear manual</span>
               </div>
             </div>
           </div>
         </div>
 
-        {showLoading ? <h2 className='text-center'><div className='text-center mt-4'> <BeatLoader/> </div></h2> : ""}
-        {ar.length === 0 && !showLoading ? 
-        <p className="mt-5 text-center h3 gradi">Search not match, try another query...</p> : ""}
+        {showLoading ? <h2 className='text-center'><div className='text-center mt-4'> <BeatLoader /> </div></h2> : ""}
+        {ar.length === 0 && !showLoading ?
+          <p className="mt-5 text-center h3 gradi">Search not match, try another query...</p> : ""}
         <div className="row">
           {ar.map((item) => {
             return <SaleItem key={item._id} item={item} />;

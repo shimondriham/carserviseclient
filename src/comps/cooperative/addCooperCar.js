@@ -26,18 +26,16 @@ function AddCooperCar(props){
 
   const doYear = () => { 
     let yearsar=[];
-    let counter=0;
     for (let i =1980; i <2023; i++) {
-      yearsar[counter] = i;
-      counter++;
+      yearsar[i-1980] = i;
   } 
   setYear(yearsar)
-  }
+  };
 
   const onSubForm = (formData) => {
     setBtnSend(true);
     doLocation(formData)
-  }
+  };
 
   const doLocation = async (formData) => { 
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${formData.address}&key=${secret.googleKey}`
@@ -46,7 +44,7 @@ function AddCooperCar(props){
         formData.longitude =data.lat
         formData.attitude =data.lng
         doFormApi(formData);        
-  }
+  };
 
   const doFormApi = async (formData) => {
     let url = API_URL + "/cooperative";
@@ -61,7 +59,7 @@ function AddCooperCar(props){
       console.log(err.response);
       alert("There problem try again later")
     }
-  }
+  };
 
   return (
     <div className='container mb-5'>
@@ -108,5 +106,6 @@ function AddCooperCar(props){
       </form>}
     </div>
   )
-}
-export default AddCooperCar
+};
+
+export default AddCooperCar;

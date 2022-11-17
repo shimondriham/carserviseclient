@@ -81,48 +81,44 @@ function UserInfo(props) {
       nav(-1);
     }
   };
-  const deleteUser = async () => { 
-    let url = API_URL + "/users/"+user._id;
-    // if ( await confirm({
-    //   confirmation: 'Are you sure?'
-    // }))
-    if(window.confirm("Are you sure?"))
-    {
-    try {
-      let resp = await doApiMethod(url, "DELETE", {});
-      if (resp.data.deletedCount) {
-        toast.success("user deleted succesfuly");
-        nav("/logout")
-      } 
-    } 
-    catch (err) {
-      console.log(err.response);
-      alert("There problem try again later");
+  const deleteUser = async () => {
+    let url = API_URL + "/users/" + user._id;
+    if (window.confirm("Are you sure?")) {
+      try {
+        let resp = await doApiMethod(url, "DELETE", {});
+        if (resp.data.deletedCount) {
+          toast.success("user deleted succesfuly");
+          nav("/logout")
+        }
+      }
+      catch (err) {
+        console.log(err.response);
+        alert("There problem try again later");
+      }
     }
-  }
   }
 
   return (
     <div className="container mb-5">
       <div className="premium-go">
-      <h2 style={{paddingTop:"10px"}}>Premium User<i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></h2>
-      <button
-        className="h3"
-        title="get premium"
-        onClick={() => nav("/checkoutPremium")}
-      >
-        <i className="fa fa-user-circle" aria-hidden="true"></i>
-      </button>
+        <h2 style={{ paddingTop: "10px" }}>Premium User<i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></h2>
+        <button
+          className="h3"
+          title="get premium"
+          onClick={() => nav("/checkoutPremium")}
+        >
+          <i className="fa fa-user-circle" aria-hidden="true"></i>
+        </button>
       </div>
       <div className="delete-user">
-      <h4 style={{paddingTop:"10px"}}>Delete User</h4>
-      <button
-        className="h5"
-        title="delete user"
-        onClick={deleteUser}
-      >
-       <i className="fa fa-trash mx-2" aria-hidden="true"></i>
-      </button>
+        <h4 style={{ paddingTop: "10px" }}>Delete User</h4>
+        <button
+          className="h5"
+          title="delete user"
+          onClick={deleteUser}
+        >
+          <i className="fa fa-trash mx-2" aria-hidden="true"></i>
+        </button>
       </div>
       <div style={{ minHeight: "15vh" }}></div>
       {user._id ? (

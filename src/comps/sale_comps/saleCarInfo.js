@@ -31,56 +31,55 @@ function SaleCarInfo(props) {
           <i className="fa fa-lastfm me-4 mb-4" aria-hidden="true"></i>
           {product.name}
         </h1>
-
         <div className="container-image mt-5">
-        <img
+          <img
             src={product.img_url || "/images/cover.jpg"}
             alt={product.name}
             className="img-thumbnail image"
             width={"30%"}
           />  <div className="middle">
-      <div className="text-information">{product.info}</div>
-       </div>
-    </div>
+            <div className="text-information">{product.info}</div>
+          </div>
+        </div>
         <div className="details mt-4">
           <div className="me-5">
-          <h5>
-            Price: {product.price}
-            <i className="fa fa-ils mx-1 text-white" aria-hidden="true"></i>
-          </h5>
-          <h4>Model: {product.year} </h4>
+            <h5>
+              Price: {product.price}
+              <i className="fa fa-ils mx-1 text-white" aria-hidden="true"></i>
+            </h5>
+            <h4>Model: {product.year} </h4>
           </div>
           <div>
-          <h5>{product.car_gear} </h5>
-          <h4>{product.cc}<small>cc</small>
-          </h4>
+            <h5>{product.car_gear} </h5>
+            <h4>{product.cc}<small>cc</small>
+            </h4>
           </div>
-          </div>
-          <div  iv className="order-btn">
-            <button
-              onClick={() => {
-                nav(-1);
-              }}
-              className="btn btn-outline-light"
-            >
-              <i className="fa fa-chevron-left" aria-hidden="true"></i>
+        </div>
+        <div iv className="order-btn">
+          <button
+            onClick={() => {
+              nav(-1);
+            }}
+            className="btn btn-outline-light"
+          >
+            <i className="fa fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          {product.qty > 0 ? (
+            <button onClick={onOrder} className="btn btn-outline-light  ms-2">
+              <i
+                className="fa fa-credit-card-alt me-2"
+                aria-hidden="true"
+              ></i>
+              Order now
             </button>
-            {product.qty > 0 ? (
-              <button onClick={onOrder} className="btn btn-outline-light  ms-2">
-                <i
-                  className="fa fa-credit-card-alt me-2"
-                  aria-hidden="true"
-                ></i>
-                Order now
-              </button>
-            ) : (
-              <button className="btn btn-danger ms-2">SOLD OUT!!!</button>
-            )}
-          </div>
+          ) : (
+            <button className="btn btn-danger ms-2">SOLD OUT!!!</button>
+          )}
+        </div>
       </div>
       <div style={{ minHeight: "6vh" }}></div>
     </div>
   );
-}
+};
 
 export default SaleCarInfo;

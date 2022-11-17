@@ -11,9 +11,7 @@ function VehiclesRental(props){
   },[])// eslint-disable-line react-hooks/exhaustive-deps
 
   const doApi = async() => {
-    // check if there products saved in the local that user visited in
     let vistedVehicles = checkVisitedLocal();
-    
     let url;
     if(vistedVehicles){
      url = API_URL+"/rental/visited?visited="+ vistedVehicles;
